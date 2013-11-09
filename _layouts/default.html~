@@ -39,6 +39,9 @@
               </p>
             </div>
           </div>
+            <div class="hosted">
+              <p>Proudly hosted on <a href="https://github.com/">GitHub</a> and deployed by <a href="http://jekyllrb.com/">Jekyll</a></p>
+            </div>
         </div>
 
     </body>

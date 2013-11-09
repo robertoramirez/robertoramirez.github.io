@@ -2,19 +2,11 @@
 layout: default
 comments: true
 ---
+
 <h2>{{ page.title }}</h2>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="social-sharing">
-	<!-- Facebook -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- Twitter -->
 	<a href="https://twitter.com/share" class="twitter-share-button" data-via="joserobertomx">Tweet</a>
 	<!-- Google + -->
@@ -25,6 +17,7 @@ comments: true
 {{ content }}
 </div>
 
+<br />
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -51,6 +44,4 @@ var disqus_shortname = 'robertoramirez'; // required: replace example with your 
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-
-<div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
 
