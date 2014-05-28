@@ -2,6 +2,8 @@
 published: false
 layout: post
 title: Error al redirigir al puerto lpt1 en Windows
+date: 2014-05-28 15:00:00
+categories: it windows
 ---
 
 En un sistema POS (PointOfSale) que tenemos en la empresa donde trabajo, nos vemos en la necesidad por decision del proveedor, tener que redireccionar al puerto lpt1 de la computadora aquellas impresoras de tickets que estan conectadas a través del puerto USB.
