@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 ---
 
 ## Error redirigir al puerto lpt1 en Windows
