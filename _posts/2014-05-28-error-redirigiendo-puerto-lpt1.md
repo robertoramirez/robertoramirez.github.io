@@ -1,5 +1,6 @@
 ---
 published: false
+layout: post
 ---
 
 ## Error redirigir al puerto lpt1 en Windows
