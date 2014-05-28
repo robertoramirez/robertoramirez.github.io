@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 layout: post
 title: Error al redirigir al puerto lpt1 en Windows
 ---
