@@ -10,7 +10,7 @@ En el departamento de TI tenemos como política que las cuentas de inicio de ses
 
 Para realizar la asignación de la impresora al puerto lpt1 usamos el comando de msdos NET USE, el cual nos permite redireccionar al puerto, la sintáxis del comando es:
 
-NET USE LPT1: \\HOST\PRINTER /PERSISTENT;YES
+NET USE LPT1: \\HOST\PRINTER /PERSISTENT:YES
 
 En donde HOST, es el nombre de la computadora o dirección IP y PRINTER el nombre del recurso compartido que se asigno a la impresora.
 
