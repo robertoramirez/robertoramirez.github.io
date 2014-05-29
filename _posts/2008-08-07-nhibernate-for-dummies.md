@@ -49,3 +49,104 @@ Dentro de nuestra librería de clases Tutorial.NH.BOL vamos a crear una carpeta 
 ###4.1. Usuario.hbm.xml
 
 <script src="https://gist.github.com/4079649.js?file=gistfile1.xml"></script>
+
+Ahora podemos hablar un poco sobre el contenido del archivo XML. Todos los documentos para mapear XML deberán de declarar el espacio de nombre urn:nhibernate-mapping-2.2 (depende de la versión distribuida), así como de manera opcional los atributos assembly para indicar el ensamblado de nuestras clases y el namespace de nuestras clases en el proyecto. Existen otros atributos aplicables a nuestro archivo como el schema, que representa el nombre del esquema de la base de datos, entre otros que están fuera del alcance de este tutorial. Una vez hecho esto debemos de comenzar a tratar los atributos y elementos para la clase que deseamos mapear. Dentro de las etiquetas <class name="Usuario"></class> estarán todas aquellas configuraciones para la clase. El atributo name corresponde al nombre de la clase incluyendo el nombre del assembly. El atributo table corresponde al nombre de la tabla en la base de datos.
+
+Con la etiqueta <id> representamos la llave primaria de la tabla de la base de datos. Este elemento define el mapeo entre la propiedad de la clase y la llave primaria de la base de datos. Entre sus atributos se encuentra el name, que indica el nombre del identificador de la propiedad; columna, que representa la columna en la tabla; type, el tipo de dato y el unsaved-value indica que el objeto es nuevo y que no existe en la base de datos.
+
+Debemos de continuar con todas las propiedades, entonces Nombre, Apellido Paterno, Apellido Materno, Correo Electronico y Telefono deberán de estar dentro de las etiquetas <property/> y representan propiedades persistentes de la clase.
+
+Y como habíamos dicho al inicio del tutorial, lo complicaremos creando una relación one-to-many con la clase Tarea y de esta forma representaremos la relación en la base de datos, es decir, que a un usuario se le pueden asignar varias tareas.
+
+###4.2. Tarea.hbm.xml
+
+<script src="https://gist.github.com/4079650.js?file=gistfile1.xml"></script>
+
+Lo único representativo es el elemento <many-to-one> para la propiedad Usuario de nuestra clase. Esta representa una ordinaria asociación a otra clase persistente, en este caso la que tenemos en la base de datos.
+
+Algo que debemos de saber es que en primera instancia NH está configurado de modo perezoso (lazy load) para todas las entidades creadas. Esto se recomienda dejarse así y no moverse. Debido a esto la regla es que todas las propiedades definidas en nuestras entidades deberán ser virtuales.
+
+<script src="https://gist.github.com/4079655.js?file=gistfile1.txt"></script>
+
+Hay mucha más información relacionada a estos archivos mapping, pero sería algo complicado tratar de explicárselos paso a paso, además de que este tutorial perdería sentido, para ello, recomiendo consultar la referencia en línea sobre este mapeo de clases en http://www.hibernate.org/hib_docs/nhibernate/1.2/reference/en/html/mapping.html.
+
+Hasta aquí nuestro explorador de soluciones deberá verse así:
+
+![Paso 4](https://app.box.com/representation/file_version_14966699505/image_2048_jpg/1.jpg)
+
+##5. Configurando NHibernate en VSTS 2008 .NET
+
+Bueno hasta ahora, no hemos hecho mucho, pero ya empieza lo bueno =). Hay que decirle a NH con que proveedor de base de datos vamos a trabajar. Por fortuna NH soporta el más querido por nosotros en la oficina SQL Server.
+
+Para hacer mas modular la aplicación, vamos a agregar una aplicación de consola a nuestra solución con el fin de consumir nuestro ORM. El nombre que yo le he puesto al proyecto es Tutorial.NH.App, tu puedes ponerle el que gustes. Importante agregar dentro de las referencias nuestro ensamblado de nombre Tutorial.NH.BOL. Pudimos haber utilizado Unit Test para probar nuestro proyecto en lugar de la aplicación de Consola, pero mejor eso veámoslo después.
+
+###5.1. Configuración en App.config
+
+Agregaremos un archivo de configuración donde indicaremos las llaves necesarias para establecer la comunicación con nuestra base de datos.
+
+<script src="https://gist.github.com/4079657.js?file=gistfile1.xml"></script>
+
+###5.2 Configuración en hibernate.cfg.xml
+
+Este es otra manera de realizar nuestra configuración de NH y consiste en agregar un archivo XML a nuestro proyecto con la siguiente estructura: hibernate.cfg.xml.
+
+<script src="https://gist.github.com/4079650.js?file=gistfile1.xml"></script>
+
+Podemos utilizar cualquiera de los dos. Con este archivo de configuración le decimos a NH que queremos trabajar con Microsoft SQL Server como base de datos. Para nuestro ejemplo usaremos la segunda opción.
+
+Y bien ya estamos listos para iniciar con nuestras operaciones CRUD.
+
+##6. Operaciones CRUD
+
+Nuestro sistema hasta este punto ha sido preparado con lo esencial. Se han implementado características necesarias para el funcionamiento de NH, se ha creado el modelo de dominio se han definido los archivos mapping y se ha establecido la configuración a NH. Vamos poco a poco y ya llevamos algo recorrido =).
+
+Empezaremos a darle uso y funcionalidad a nuestro dominio.
+
+Ahora, vamos a agregar una carpeta a nuestro proyecto Tutorial.NH.BOL llamado Repositorio (esto lo especifica Domain Driven Design) y en el agregaremos una clase llamada IRepositorioUsuario.cs y la definimos de la siguiente manera:
+
+<script src="https://gist.github.com/4079659.js?file=gistfile1.cs"></script>
+
+Ahora, lo que sigue es implementar cada uno de los métodos definidos por la Interface IRepositorioUsuario.cs. Comenzaremos con el primer método Agregar() que nos va a permitir agregar una instancia de un Usuario en nuestra base de datos.
+
+Dentro de la misma carpeta (Repositorio) vamos a agregar una clase llamada RepositorioUsuario.cs y vamos a hacer que herede de la interfase IRepositorioUsuario.cs, con esto haremos que la clase implemente cada uno de los métodos de la interface.
+
+<script src="https://gist.github.com/4079662.js?file=gistfile1.cs"></script>
+
+Ahora, lo que sigue es crear el mecanismo para crear las sesiones que se van a comunicar con nuestra base de datos. Dentro del mismo proyecto, nos crearemos una Carpeta que nombraremos Genericos y agregamos una clase de nombre NHibernateClass.cs.
+
+<script src="https://gist.github.com/4079664.js?file=gistfile1.cs"></script>
+
+Esta clase lo que hará por nosotros es crear una SessionFactory solo la primera vez que el cliente necesita una sesión. Que contiene este Singleton? Contiene un objeto del tipo Configuración que utiliza la configuración de nuestro hibernate.cfg.xml que creamos en la aplicación se escritorio y que se encarga de cargar el objeto ISessionFactory gracias al método BuildSessionFactory() y de esta forma poder comenzar a crear sesiones de tipo ISessionFactory.
+
+Volvamos a nuestra clase RepositorioUsuario.cs e implementemos el método Agregar() de la siguiente manera:
+
+<script src="https://gist.github.com/4079665.js?file=gistfile1.txt"></script>
+
+En el m&eacute;todo Actualizar() escribiremos lo siguiente:
+
+<script src="https://gist.github.com/4079667.js?file=gistfile1.txt"></script>
+
+En el m&eacute;todo Eliminar() escribiremos lo siguiente:
+
+<script src="https://gist.github.com/4079670.js?file=gistfile1.txt"></script>
+
+Para el m&eacute;todo ObtenerUsuarioPorId() haremos esto:
+
+<script src="https://gist.github.com/4079673.js?file=gistfile1.txt"></script>
+
+Y para obtener todos los usuarios:
+
+<script src="https://gist.github.com/4079674.js?file=gistfile1.txt"></script>
+Nota la creaci&oacute;n del objeto sesi&oacute;n desde nuestra clase NHibernateClass.cs y tambien el uso de una transacci&oacute;n.
+
+&iexcl;Y listo! podemos empezar a trabajar con nuestro modelo de NH para la persistencia de nuestras entidades de dominio.
+
+Para guardar la informaci&oacute;n de un usuario y sus tareas una posible implementaci&oacute;n es que desde nuestra aplicaci&oacute;n de consola incluyamos esta implementaci&oacute;n:
+
+<script src="https://gist.github.com/4079677.js?file=gistfile1.txt"></script>
+
+Si bien recordamos cuando hicimos el modelo de dominio y las mapeamos con la base de datos, creamos unas propiedades que permit&iacute;an las relaciones &lt;many-to-one /&gt;, &lt;one-to-many /&gt;. Esta es la verdadera magia, se dieron cuenta que nunca utilizamos procedimientos almacenados? o que nunca nos creamos rutinas de conexi&oacute;n y de creaci&oacute;n de DataAdapters? o DataSets? mucho menos DataReaders? Gracias a NH podemos persistir nuestros objetos de una manera limpia y orientada a objetos que es lo m&aacute;s importante.
+
+##Conclusi&oacute;n
+
+En este sencillo ejemplo, pudimos observar c&oacute;mo manejar un modelo de dominio y como cerrar el "gap" con nuestra base de datos relacional. Sabemos que este es un ejemplo b&aacute;sico y hay mucho m&aacute;s que explicar y que probar, pero por lo pronto espero que esto les haya servido como una introducci&oacute;n (al menos a m&iacute; si me ayudo jeje).
