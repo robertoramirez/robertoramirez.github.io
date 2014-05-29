@@ -18,6 +18,6 @@ A partir de ahora intentaremos explicar cómo funciona a grandes rasgos NH y com
 
 Este proyecto deberá de contener nuestros objetos de negocio, y por lo tanto aquellos objetos que deseamos persistir. Como ya hemos mencionado en otros tutoriales, se recomienda como buena práctica crear un archivo de solución (sln) y en este agregar tantos proyectos vayamos a necesitar.
 
-![Paso 1](https://app.box.com/s/pyhgokhoy3wv7qwoq543)
+![Paso 1](https://app.box.com/representation/file_version_14966616093/image_2048_jpg/1.jpg)
 
 
