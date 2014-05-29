@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: "NHibernate for dummies"
 date: 2008-08-07 14:09:00
