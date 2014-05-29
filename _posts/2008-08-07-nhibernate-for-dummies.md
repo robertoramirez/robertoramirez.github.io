@@ -1,4 +1,5 @@
 ---
+published: false
 layout: post
 title: "NHibernate for dummies"
 date: 2008-08-07 14:09:00
@@ -14,3 +15,7 @@ NHibernate (NH) es un marco de trabajo ORM para ambientes en los que utilizamos 
 A partir de ahora intentaremos explicar cómo funciona a grandes rasgos NH y como podríamos aplicarlo a los nuevos desarrollos en la empresa. Para la práctica estaremos utilizando la versión 2008 del Visual Studio Team System (VSTS 2008) como IDE de desarrollo y la versión express del SQL Server 2005.
 
 ##1. Crear un proyecto biblioteca de clases
+
+Este proyecto deberá de contener nuestros objetos de negocio, y por lo tanto aquellos objetos que deseamos persistir. Como ya hemos mencionado en otros tutoriales, se recomienda como buena práctica crear un archivo de solución (sln) y en este agregar tantos proyectos vayamos a necesitar.
+
+
