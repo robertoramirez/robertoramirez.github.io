@@ -1,3 +1,9 @@
+---
+layout: post
+title: "NHibernate for dummies"
+date: 2008-08-07 14:09:00
+categories: programacion orm
+---
 
 Sabemos hoy en día que la mayoría de las empresas basan sus aplicaciones en software analizado, diseñado y programado orientado a objetos. Novutek, los últimos meses se ha preocupado porque que cada vez en los desarrollos que se venden se utilicen objetos para crear modelos de negocio, que con esto, sin duda si creamos un modelo de dominio orientado a objetos será más claro el negocio para que el que lo necesite entender y código fácil mucho mas mantenible para los programadores que lo vayan a modificar.
 
