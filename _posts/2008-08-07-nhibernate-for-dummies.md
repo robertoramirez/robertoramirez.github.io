@@ -48,4 +48,4 @@ Dentro de nuestra librería de clases Tutorial.NH.BOL vamos a crear una carpeta 
 
 ###4.1. Usuario.hbm.xml
 
-
+<script src="https://gist.github.com/4079649.js?file=gistfile1.xml"></script>
