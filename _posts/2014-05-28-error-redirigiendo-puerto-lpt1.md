@@ -20,4 +20,4 @@ El problema es que en cuentas sin privilegios de administrador, al querer usar e
 
 Para corregir esto y no morir en el intento de impedir que los usuarios hagan lo que quieran en el PC y dejarlos como usuario estándar en el equipo, hay que modificar el puerto LPT1 en el administrador de dispositivos de Windows, y asignarle uno nuevo, por ejemplo, cambiarle de LPT1 a LPT2 por ejemplo; de esta manera liberamos el puerto para que el usuario del PC en turno pueda usarlo.
 
-![Administrador de Dispositivos](https://app.box.com/representation/file_version_14969404621/image_2048/1.png)
+![Administrador de Dispositivos](https://dl.dropboxusercontent.com/u/1671360/robertoramirez.github.io/assets/portlpt1.png)
