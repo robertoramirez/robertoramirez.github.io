@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "¡Intentándolo de nuevo!"
-date: {}
+date: 2013-11-06
 categories: blog
 published: true
 ---
