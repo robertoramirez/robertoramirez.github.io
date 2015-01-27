@@ -1,4 +1,6 @@
-name: Roberto Ramírez Blog
+﻿name: Roberto Ramírez Blog
 markdown: redcarpet
-pygments: true
+pygments: false
+highlighter: rouge
 url: http://www.robertoramirez.mx
+encoding: utf-8
