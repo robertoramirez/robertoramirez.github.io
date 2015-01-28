@@ -1,6 +1,28 @@
-﻿name: Roberto Ramírez Blog
-markdown: redcarpet
-pygments: false
-highlighter: rouge
-url: http://www.robertoramirez.mx
+# Dependencies
+markdown:         redcarpet
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Roberto
+tagline:          'Software Developer and IT specialist'
+#description:      "I live in México. I make software and use it to work"
+url:              http://www.robertoramirez.mx
+baseurl:          /
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/poole/hyde
+
 encoding: utf-8
