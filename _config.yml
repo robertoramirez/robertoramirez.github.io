@@ -26,7 +26,3 @@ github:
   repo:           https://github.com/poole/hyde
 
 encoding: utf-8
-
-safe: true
-
-lsi: false
