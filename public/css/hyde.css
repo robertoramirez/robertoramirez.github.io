@@ -252,25 +252,31 @@ a.sidebar-nav-item:focus {
 
 /* Social */
 .social {
-  list-style: none;
+  list-style:none;
   margin:0;
   padding:0;
-  vertical-align: middle;
 }
 
 .social {
   margin-bottom: 3rem;
 }
 
-.social li {
-  float: left;
-  padding: 0;
+.social ul{
+  position:absolute;
+  /*top:100%; Uncommenting this makes the dropdowns work in IE7 but looks a little worse in all other browsers. Your call. */
+  left: -9999px;
   margin: 0;
+  padding: 0;
+  text-align:left;
 }
 
-.social li a {
-  text-decoration: none;
-  padding-right: 25px;
+.social li {
+  display:inline;
+}
+
+.social a {
+  display:inline-block;
+  padding: 10px;
 }
 
 a.github {
