@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Access Denied al redirigir al puerto LPT1 en Windows
+title: Acceso denegado al redirigir el puerto LPT1 en Windows
 date: 2014-05-28 15:00:00
 categories: it windows
 ---
@@ -12,7 +12,7 @@ En el departamento de TI tenemos como política que las cuentas de inicio de ses
 
 Para realizar la asignación de la impresora al puerto lpt1 usamos el comando de msdos NET USE, el cual nos permite redireccionar al puerto, la sintáxis del comando es:
 
-    NET USE LPT1: \\HOST\PRINTER /PERSISTENT:YES
+> NET USE LPT1: \\HOST\PRINTER /PERSISTENT:YES
 
 En donde HOST es el nombre de la computadora o dirección IP y PRINTER el nombre del recurso compartido que se asigno a la impresora.
 
