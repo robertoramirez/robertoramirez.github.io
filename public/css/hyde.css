@@ -275,30 +275,18 @@ a.sidebar-nav-item:focus {
 }
 
 .social a {
+  margin:0;
   display:inline-block;
-  padding: 10px;
+  opacity: 0.5;
+  filter: Alpha(opacity=50); /* IE8 and earlier */
 }
 
-a.github {
-  background: url('../github.png') center no-repeat; 
+.social a:hover {
+  opacity: 100;
+  filter: Alpha(opacity=100); /* IE8 and earlier */
+  text-decoration: none;
 }
 
-a.github:hover {
-  background: url('../github-32.png') center no-repeat;
-}
-
-a.twitter {
-  background: url('../twitter.png') center no-repeat;
-}
-
-a.twitter:hover {
-  background: url('../twitter-32.png') center no-repeat;
-}
-
-a.instagram {
-  background: url('../instagram.png') center no-repeat;
-}
-
-a.instagram:hover {
-  background: url('../instagram-32.png') center no-repeat;
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  margin: 0 !important;
 }
