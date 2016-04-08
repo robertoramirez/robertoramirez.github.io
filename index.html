@@ -1,69 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"           content="">
-    <meta name="viewport"              content="width=device-width,initial-scale=1">
+---
+layout: default
+title: Home
+---
 
-    <title>Roberto Ramírez.</title>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-    <meta property="og:title"     content="Roberto Ramírez. Designer and Developer">
-    <meta property="og:url"       content="http://www.robertoramirez.mx">
-    <meta property="og:site_name" content="Roberto Ramírez. Designer and Developer">
-    <meta property="og:type"      content="website">
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="frontend/img/favicon/apple-touch-icon-57x57.png?v=4">
-    <link rel="apple-touch-icon" sizes="60x60" href="frontend/img/favicon/apple-touch-icon-60x60.png?v=4">
-    <link rel="apple-touch-icon" sizes="72x72" href="frontend/img/favicon/apple-touch-icon-72x72.png?v=4">
-    <link rel="apple-touch-icon" sizes="76x76" href="frontend/img/favicon/apple-touch-icon-76x76.png?v=4">
-    <link rel="apple-touch-icon" sizes="114x114" href="frontend/img/favicon/apple-touch-icon-114x114.png?v=4">
-    <link rel="apple-touch-icon" sizes="120x120" href="frontend/img/favicon/apple-touch-icon-120x120.png?v=4">
-    <link rel="apple-touch-icon" sizes="144x144" href="frontend/img/favicon/apple-touch-icon-144x144.png?v=4">
-    <link rel="apple-touch-icon" sizes="152x152" href="frontend/img/favicon/apple-touch-icon-152x152.png?v=4">
-    <link rel="apple-touch-icon" sizes="180x180" href="frontend/img/favicon/apple-touch-icon-180x180.png?v=4">
-    <link rel="icon" type="image/png" href="frontend/img/favicon/favicon-32x32.png?v=4" sizes="32x32">
-    <link rel="icon" type="image/png" href="frontend/img/favicon/android-chrome-192x192.png?v=4" sizes="192x192">
-    <link rel="icon" type="image/png" href="frontend/img/favicon/favicon-96x96.png?v=4" sizes="96x96">
-    <link rel="icon" type="image/png" href="frontend/img/favicon/favicon-16x16.png?v=4" sizes="16x16">
-    <link rel="manifest" href="frontend/img/favicon/manifest.json?v=4">
-    <link rel="shortcut icon" href="frontend/img/favicon/favicon.ico?v=4">
-    <meta name="msapplication-TileColor" content="#111111">
-    <meta name="msapplication-TileImage" content="frontend/img/favicon/mstile-144x144.png?v=4">
-    <meta name="msapplication-config" content="frontend/img/favicon/browserconfig.xml?v=4">
-    <meta name="theme-color" content="#080808">
-  
-    <script type="text/javascript">
-    WebFontConfig = { fontdeck: { id: '59811' } };
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
 
-    (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-    })();
-    </script>
-
-    <link rel="stylesheet" href="frontend/css/style.css"/>
-
-</head>
-<body>
-    <main>
-        <header>
-            <noscript>
-                <h1 class="logo">Roberto Ramírez. IT Professional</h1>
-            </noscript>
-            <h1 class="logo"></h1>
-        </header>
-        <section class="content">
-            <p>Hi. I'm from Sonora, México. Currently I manage an IT department at <a href="http://www.masgasolineras.com/" target="_blank">AGM Corporativo</a>, but, sometimes I write code to create useful and pretty web applications to people who wants live easier.</p>
-            <p>Have questions or suggestions? Feel free to ask me on <a href="http://www.twitter.com/joserobertomx">Twitter</a>.</p>
-        </section>
-    </main>
-    <script src="frontend/js/lib/typewriter-bundle.js"></script>
-    <script src="frontend/js/script.js"></script>
-</body>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
