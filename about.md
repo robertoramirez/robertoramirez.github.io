@@ -5,7 +5,7 @@ title: About
 
 Hi there!
 
-I'm Roberto Ramírez, an IT Professional from Sonora, México. Currently I manage an IT department at [Yoreme](http://www.yoreme.com), but, sometimes I write code to create useful and pretty web applications to people who wants live easier.
+I'm Roberto Ramírez, an IT Professional from Sonora, México. Currently I manage an IT department at [AGM Corporativo](http://www.masgasolineras.com), but, sometimes I write code to create useful and pretty web applications to people who wants live easier.
 
 This website is [open source](https://github.com/poole/hyde), proudly hosted on [github](https://github.com) and built by [jekyll](http://jekyllrb.com/).
 
