@@ -15,7 +15,9 @@ tags: windows
 		* Opciones de seguridad y dentro de las opciones, habilitar la directiva "Control de cuentas de usuario: Modo de aprobación de administrador para la cuenta predefinida Administrador
 * Reiniciar equipo
 
-WINDOWS+X
-CMD
-UAC
-SECPOL.MSC
+Comandos:
+
+- WINDOWS+X
+- CMD
+- UAC
+- SECPOL.MSC
