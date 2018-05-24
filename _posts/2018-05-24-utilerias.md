@@ -16,6 +16,7 @@ permalink: /utilerias/
 * [AnyDesk v3.1.1][7]
 * [Testdisk v7.0][8]
 * [Putty SSH Client][9]
+* [Firebird 2.5 x64][10]
 
 [1]:{{ site.url }}/download/winbox3.13.zip
 [2]:{{ site.url }}/download/Firebird_ODBC_2.0.5.156_x64.zip
@@ -26,3 +27,4 @@ permalink: /utilerias/
 [7]:{{ site.url }}/download/AnyDesk3.1.1.zip
 [8]:{{ site.url }}/download/testdisk-7.0.win.zip
 [9]:https://app.box.com/s/eahmlxvoyeted3g5883bztzvj1lhjslq
+[10]:{{ site.url }}/download/Firebird-2.5.8.27089-0_x64.zip
