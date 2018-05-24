@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Utilerias
+date: 2018-05-24 16:16:01 -0600
 tags: software
+hidden: true
 ---
 
-## Utilerias
 * [Winbox v3.13][1]
 * [Firebird ODBC v 2.0.5.156 x64][2]
 * [LifeCam v3.60][3]
