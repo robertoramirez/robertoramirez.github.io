@@ -3,7 +3,8 @@ layout: post
 title: Utilerias
 date: 2018-05-24 16:16:01 -0600
 tags: software
-hidden: true
+exclude: true
+permalink: /utilerias/
 ---
 
 * [Winbox v3.13][1]
