@@ -27,4 +27,4 @@ permalink: /utilerias/
 [7]:{{ site.url }}/download/AnyDesk3.1.1.zip
 [8]:{{ site.url }}/download/testdisk-7.0.win.zip
 [9]:https://app.box.com/s/eahmlxvoyeted3g5883bztzvj1lhjslq
-[10]:{{ site.url }}/download/Firebird-2.5.8.27089-0_x64.zip
+[10]:{{ site.url }}/download/Firebird-2.5_x64.zip
