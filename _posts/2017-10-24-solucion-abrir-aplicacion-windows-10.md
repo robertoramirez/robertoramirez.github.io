@@ -4,7 +4,7 @@ title: No se puede abrir aplicación en Windows 10
 tags: windows
 ---
 
-![]({{ site.url }}/img/cantopenapp.PNG)
+<img src="/img/cantopenapp.png">
 
 ## Cuenta predefinida de administrador no nos deja abrir nuestras aplicaciones, solución:
 

@@ -18,7 +18,7 @@ A partir de ahora intentaremos explicar cómo funciona a grandes rasgos NH y com
 
 Este proyecto deberá de contener nuestros objetos de negocio, y por lo tanto aquellos objetos que deseamos persistir. Como ya hemos mencionado en otros tutoriales, se recomienda como buena práctica crear un archivo de solución (sln) y en este agregar tantos proyectos vayamos a necesitar.
 
-![Paso 1](https://dl.dropboxusercontent.com/u/1671360/robertoramirez.github.io/assets/14994942-paso1.jpg)
+<img src="/img/14994942-paso1.jpg">
 
 Para este tutorial he creado un proyecto llamado Tutorial.NH.BOL que es la biblioteca de clases que contendrá las entidades que representaran la base de datos.
 
@@ -28,13 +28,13 @@ Nuestro modelo de dominio estará basado en usuarios (crearemos una carpeta con 
 
 Es una buena práctica usar el diagramador de clases que por defecto cuenta el VSTS 2008, el trabajo es más limpio, mas controlado y lo mejor de todo en la mayoría de los casos ¡no tenemos que escribir código! =).
 
-![Paso 2](https://dl.dropboxusercontent.com/u/1671360/robertoramirez.github.io/assets/14994982-paso2.jpg)
+<img src="/img/14994982-paso2.jpg">
 
 ## 3. Crear modelo relacional
 
 El modelo relacional estará representado por aquellas tablas de base de datos las cuales deberán de representar las entidades del modelo de dominio que queremos persistir. Ya sea en el IDE de VSTS 2008 o en la consola de Microsoft SQL Server deberemos de obtener algo como esto (algo ideal sería utilizar NH para generar el esquema de nuestra base de datos acorde a nuestro modelo de dominio, este método queda fuera del alcance del tutorial):
 
-![Paso 3](https://dl.dropboxusercontent.com/u/1671360/robertoramirez.github.io/assets/14994961-paso3.jpg)
+<img src="/img/14994961-paso3.jpg">
 
 ## 4. Mapeo ORM
 
@@ -72,7 +72,7 @@ Hay mucha más información relacionada a estos archivos mapping, pero sería al
 
 Hasta aquí nuestro explorador de soluciones deberá verse así:
 
-![Paso 4](https://dl.dropboxusercontent.com/u/1671360/robertoramirez.github.io/assets/14995032-paso4.jpg)
+<img src="/img/14995032-paso4.jpg">
 
 ## 5. Configurando NHibernate en VSTS 2008 .NET
 
