@@ -21,5 +21,3 @@ Comandos:
 - CMD
 - UAC
 - SECPOL.MSC
-
-Have fun!
