@@ -1,0 +1,22 @@
+// travis.yml
+language: ruby
+rvm:
+- 2.6.5
+
+before_install:
+- chmod +x scripts/build.sh # makes the scripts executable
+- chmod +x scripts/deploy.sh # makes the scripts executable
+
+script: scripts/build.sh
+
+# branch whitelist
+branches:
+  only:
+  - site     # test the gh-pages branch
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: site
